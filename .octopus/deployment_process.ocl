@@ -61,7 +61,7 @@ step "mysteptemplate2" {
         properties = {
             Octopus.Action.RunOnServer = "false"
             Octopus.Action.Template.Id = "ActionTemplates-3649"
-            Octopus.Action.Template.Version = "4"
+            Octopus.Action.Template.Version = "5"
             PackageName = "{\"PackageId\":\"RandomQuotes\",\"FeedId\":\"Feeds-3167\"}"
             SupportExportSpaceName = "Default"
         }
