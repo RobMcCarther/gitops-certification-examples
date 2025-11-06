@@ -61,22 +61,10 @@ step "mysteptemplate2" {
         properties = {
             Octopus.Action.RunOnServer = "false"
             Octopus.Action.Template.Id = "ActionTemplates-3649"
-            Octopus.Action.Template.Version = "2"
-            PackageName = "{\"PackageId\":\"RandomQuotes\",\"FeedId\":\"octopus-server-built-in\"}"
+            Octopus.Action.Template.Version = "3"
+            PackageName = "{\"PackageId\":\"RandomQuotes\",\"FeedId\":\"Feeds-3167\"}"
             SupportExportSpaceName = "Default"
         }
         worker_pool_variable = ""
-
-        packages "PackageName" {
-            acquisition_location = "ExecutionTarget"
-            feed = "octopus-server-built-in"
-            package_id = "RandomQuotes"
-            properties = {
-                Extract = "False"
-                PackageParameterName = "PackageName"
-                Purpose = ""
-                SelectionMode = "deferred"
-            }
-        }
     }
 }
