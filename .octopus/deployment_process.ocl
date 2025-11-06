@@ -1,0 +1,38 @@
+step "mysteptemplate" {
+    name = "myStepTemplate"
+    properties = {
+        Octopus.Action.TargetRoles = "trident-web"
+    }
+
+    action {
+        properties = {
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Template.Id = "ActionTemplates-3649"
+            Octopus.Action.Template.Version = "0"
+            SupportExportAPIKey = "#{Octopus.Account.AccountType}"
+            SupportExportServerURL = "#{Octopus.Account.AccountType}"
+            SupportExportSpaceName = "Default"
+            SupportExportTaskID = "#{Octopus.Account.AccountType}"
+        }
+    }
+}
+
+step "octopus-support-export" {
+    name = "Octopus - Support Export"
+    properties = {
+        Octopus.Action.TargetRoles = "trident-serv"
+    }
+
+    action {
+        properties = {
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Template.Id = "ActionTemplates-3648"
+            Octopus.Action.Template.Version = "1"
+            SupportExportAPIKey = "#{Octopus.Account.Name}"
+            SupportExportServerURL = "#{Octopus.Account.Name}"
+            SupportExportSpaceName = "Default"
+            SupportExportTaskID = "#{Octopus.Account.AccountType}"
+        }
+        worker_pool_variable = ""
+    }
+}
